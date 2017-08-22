@@ -17,15 +17,17 @@ Subjects identified for each measurement were read in as integers
 
 Activities were transformed from integers into factors: (activity: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).
 
-To determine columns that represented mean and standard deviation values, only columns with feature names that contained "mean()" or "std()" were read in. These same feature names were used as the variable names in the tidy file with the following modifications:
+To determine columns that represented mean and standard deviation values, only columns with feature names that contained "mean()" or "std()" were read in. All measurements read in as numeric values.  The same feature names were used as the variable names in the tidy file with the following modifications:
 <UL>
 <LI>Remove parenthesis and hyphens
 <LI>Convert to all lower case
 <LI>Correct descriptions where "body" was duplicated by removing one "body"
 </UL>
-All measurements read in as numeric values
+
 
 Test and Training data sets were processed identically and merged into one data set. A factor was added to indicate the data set that the observation came from (dataset: test, training)
+
+Measurements for each (subject, activity) pair were grouped on which the means were calculated.
 
 
 

@@ -3,7 +3,7 @@ library(dplyr)
 
 ## Use testnum to load only a subest of rows from measurement files 
 ## to save time in testing. Use -1 for entire data set
-testnum <- -1
+testnum <- 1000
 
 ## Read in feature names from features.txt
 featureNames <- read.delim("../UCI-HAR/features.txt", sep = " ",  
@@ -92,5 +92,11 @@ HARdata <- bind_rows(testdata,trainingdata) %>%
 colnames(HARdata) <- gsub("\\-|\\(|\\)","", tolower(colnames(HARdata)))
 colnames(HARdata) <- sub("bodybody", "body", colnames(HARdata))
 
-write.csv(HARdata, file="HARdata.csv")
+## Step 5: Use data to produce means by subject and activity
+HARdata_means <- group_by(HARdata, subjectid, activity) %>% select(-dataset) %>%
+    summarize_all(mean)
+
+## Write out data set
+write.table(HARdata_means, file="HARdata_means.txt", row.names = FALSE)
+
 

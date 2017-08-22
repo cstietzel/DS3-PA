@@ -14,11 +14,11 @@ Creating applications for active consumers is creating surge wearable computing 
 
 **run_analysis.R** - An R script that will read in the raw data files, process them according specifications, and produce a tidy data file.
 
-**HARData.csv** - The tidy data set with the following columns
+**HARdata_means.txt** - The tidy data set with the average of each variable for each activity and each subjectdata set with the following columns
 
 <ul>
  <li>*subject* - the integer id of the subject  
  <li>*activity* - a factor representing the activity type of observation (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)  
  <li>*dataset* - the data set the observation was obtained from (test, training)  
- <li>*measurements* - These columns (4-69) represent the measurements from the phone's acelerometer and gyro. They can decoded by \<measurement\>(mean|std)[xyz]? where \<measurement>\ is the value being observed. 
+ <li>*measurements* - These columns (4-69) represent the average measurements across all observtions (training and test) from the phone's acelerometer and gyro. They can decoded by &lt;measurement&gt;(mean|std)[xyz]? where &lt;measurement&gt; is the value being observed. 
  </ul>
