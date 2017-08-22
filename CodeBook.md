@@ -7,7 +7,7 @@ The raw data contains measurements from the accelerometer and gyroscope of the s
 The raw data for the project can be obtained here:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-If you plan on running the run_analysis.R script to recreate the tidy data file, you should extract into a directory “UCI-HAR” that is located in the above your working directory that you run the script. (i.e. getwd()/../UCI-HAR)
+If you plan on running the run_analysis.R script to recreate the tidy data file, you should extract into a directory “UCI-HAR” in your working directory so that you run the script.
 
 Detailed descriptions of the files and measurements are located in the readme.txt file that is contained in the .zip archive. A full description of the data is available at the site where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones

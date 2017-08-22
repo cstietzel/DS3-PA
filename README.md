@@ -12,9 +12,9 @@ Creating applications for active consumers is creating surge wearable computing 
 
 **codebook.md** - Detailed description of how the raw data files were processed
 
-**run_analysis.R** - An R script that will read in the raw data files, process them according specifications, and produce a tidy data file.
+**run_analysis.R** - An R script that will read in the raw data files, process them according specifications, and produce a tidy data file. The script produces two data frames that represent the entire data set (HARdata) and the average of each variable for each activity and each subject (HARdata_means).
 
-**HARdata_means.txt** - The tidy data set with the average of each variable for each activity and each subjectdata set with the following columns
+**HARdata_means.txt** - The tidy data set that contains the average of each variable grouped by each activity and subject with the following columns:
 
 <ul>
  <li>*subject* - the integer id of the subject  

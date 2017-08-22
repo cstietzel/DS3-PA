@@ -7,7 +7,7 @@ library(dplyr)
 testnum <- -1
 
 ## Read in feature names from features.txt
-featureNames <- read.delim("../UCI-HAR/features.txt", sep = " ",  
+featureNames <- read.delim("UCI-HAR/features.txt", sep = " ",  
                          col.names = c("cnum", "feature"), 
                          colClasses = c("integer", "character"),
                          header = FALSE) %>% as_tibble()
@@ -19,7 +19,7 @@ columns_to_read <- rep("NULL", numfeatures)
 columns_to_read[mean_std_cols] <- "numeric"
 
 ## Read in the activity labels and make them factors; sort by id asc for proper lookup
-activityNames <- read.delim("../UCI-HAR/activity_labels.txt", sep = " ",  
+activityNames <- read.delim("UCI-HAR/activity_labels.txt", sep = " ",  
                           col.names = c("activityid", "activity"), 
                           colClasses = c("integer", "factor"),
                           header = FALSE) %>% as_tibble() %>%
@@ -28,13 +28,13 @@ activityNames <- read.delim("../UCI-HAR/activity_labels.txt", sep = " ",
 ## Process Test Data Files and create Test Data Set 
 
 ## Read in subject id for each observation
-subjects <- read.delim("../UCI-HAR/test/subject_test.txt", sep = " ",  
+subjects <- read.delim("UCI-HAR/test/subject_test.txt", sep = " ",  
                       col.names = c("subjectid"), 
                       colClasses = c("integer"), 
                       nrows = testnum, header = FALSE) %>% as_tibble()
 
 ## Read in activity for each observation and look up the activity label
-activities <- read.delim("../UCI-HAR/test/y_test.txt", sep = " ",  
+activities <- read.delim("UCI-HAR/test/y_test.txt", sep = " ",  
                         col.names = c("activityid"), 
                         colClasses = c("integer"),
                         nrows = testnum, header = FALSE) %>% as_tibble()
@@ -42,7 +42,7 @@ activities <- mutate(activities, activity=activityNames$activity[activities$acti
 
 ## Read in only the measurements we want from feature files
 ## files fixed width with each feature requiring 16 chars
-measurements <- read.fwf("../UCI-HAR/test/X_Test.txt", widths = rep(16, numfeatures),
+measurements <- read.fwf("UCI-HAR/test/X_Test.txt", widths = rep(16, numfeatures),
                        colClasses = columns_to_read, 
                        n = testnum, header = FALSE) %>% as_tibble()
 
@@ -58,13 +58,13 @@ testdata <- bind_cols(subjects, select(activities, activity),
 ## Process Training Data Files and create Training Data Set 
 
 ## Read in subject id for each observation
-subjects <- read.delim("../UCI-HAR/train/subject_train.txt", sep = " ",  
+subjects <- read.delim("UCI-HAR/train/subject_train.txt", sep = " ",  
                        col.names = c("subjectid"), 
                        colClasses = c("integer"),
                        nrows = testnum, header = FALSE) %>% as_tibble()
 
 ## Read in activity for each observation and look up the activity label
-activities <- read.delim("../UCI-HAR/train/y_train.txt", sep = " ",  
+activities <- read.delim("UCI-HAR/train/y_train.txt", sep = " ",  
                          col.names = c("activityid"), 
                          colClasses = c("integer"),
                          nrows = testnum, header = FALSE) %>% as_tibble()
@@ -72,7 +72,7 @@ activities <- mutate(activities, activity=activityNames$activity[activities$acti
 
 ## Read in only the measurements we want from feature files
 ## files fixed width with each feature requiring 16 chars
-measurements <- read.fwf("../UCI-HAR/train/X_train.txt", widths = rep(16, numfeatures),
+measurements <- read.fwf("UCI-HAR/train/X_train.txt", widths = rep(16, numfeatures),
                          colClasses = columns_to_read, 
                          n = testnum, header = FALSE) %>% as_tibble()
 
