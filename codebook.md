@@ -24,7 +24,6 @@ To determine columns that represented mean and standard deviation values, only c
 <LI>Correct descriptions where "body" was duplicated by removing one "body"
 </UL>
 
-
 Test and Training data sets were processed identically and merged into one data set. A factor was added to indicate the data set that the observation came from (dataset: test, training)
 
 Measurements for each (subject, activity) pair were grouped on which the means were calculated.
