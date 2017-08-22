@@ -92,6 +92,5 @@ HARdata <- bind_rows(testdata,trainingdata) %>%
 colnames(HARdata) <- gsub("\\-|\\(|\\)","", tolower(colnames(HARdata)))
 colnames(HARdata) <- sub("bodybody", "body", colnames(HARdata))
 
-
-
+write.csv(HARdata, file="HARdata.csv")
 
