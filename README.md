@@ -19,5 +19,5 @@ Creating applications for active consumers is creating surge wearable computing 
 <ul>
  <li>*subject* - the integer id of the subject  
  <li>*activity* - a factor representing the activity type of observation (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)  
- <li>*measurements* - These columns (3-68) represent the average measurements across all observtions (training and test) from the phone's acelerometer and gyro. They can decoded by &lt;measurement&gt;(mean|std)[xyz]? where &lt;measurement&gt; is the value being observed. 
+ <li>*measurements* - These columns (3-68) represent the average measurements across all observations (training and test) from the phone's acelerometer and gyro. They can decoded by &lt;measurement&gt;(mean|std)[xyz]? where &lt;measurement&gt; is the value being observed. 
  </ul>

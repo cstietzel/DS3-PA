@@ -4,7 +4,7 @@ library(dplyr)
 
 ## Use testnum to load only a subest of rows from measurement files 
 ## to save time in testing. Use -1 for entire data set
-testnum <- 1000
+testnum <- -1
 
 ## Read in feature names from features.txt
 featureNames <- read.delim("../UCI-HAR/features.txt", sep = " ",  
